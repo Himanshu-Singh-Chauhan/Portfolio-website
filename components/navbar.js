@@ -17,6 +17,11 @@ import {
 } from '@chakra-ui/react'
 
 import { HamburgerIcon } from '@chakra-ui/icons'
+import ThemeToggleButton from './theme-toggle-button'
+import SvgUnderline from '../styles/svg_round_scribble_underline'
+
+
+// ------------------------------------------
 
 const LinkItem = ({ href, path, children }) => {
   const active = path === href
@@ -34,6 +39,33 @@ const LinkItem = ({ href, path, children }) => {
     </NextLink>
   )
 }
+
+// ------------------------------------------
+
+
+const LinkItemSvgHoverAnim = ({ href, path, children }) => {
+  const active = path === href
+  const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900')
+
+  return (
+    <NextLink href={href}>
+      <Link
+        p={3}
+        pb={0}
+        bg={active ? 'glassTeal' : undefined}
+        color={active ? '#202023' : inactiveColor}
+        className="round_scribble_underline"
+        style={{ textDecoration: 'none' }}
+      >
+        {children}
+      </Link>
+    </NextLink>
+  )
+}
+
+
+// ------------------------------------------
+
 
 const Navbar = props => {
   const { path } = props
@@ -77,9 +109,17 @@ const Navbar = props => {
           <LinkItem href="/about" path={path}>
             About
           </LinkItem>
+
+          <Box pb={3}>
+            <LinkItemSvgHoverAnim href="/about" path={path}>
+              Source
+              <SvgUnderline />
+            </LinkItemSvgHoverAnim>
+          </Box>
         </Stack>
 
         <Box flex={1} align="right">
+          <ThemeToggleButton />
           <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
             <Menu>
               <MenuButton
@@ -100,7 +140,12 @@ const Navbar = props => {
                   <MenuItem as={Link}>About / Contact Me</MenuItem>
                 </NextLink>
 
-                <MenuItem as={Link} href="https://www.github.com/himanshu-singh-chauhan">View Source</MenuItem>
+                <MenuItem
+                  as={Link}
+                  href="https://www.github.com/himanshu-singh-chauhan"
+                >
+                  View Source
+                </MenuItem>
               </MenuList>
             </Menu>
           </Box>
