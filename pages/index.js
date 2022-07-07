@@ -48,7 +48,7 @@ const Page = () => {
             {/* I'm a computer science student passionate about programming and design. pursuing my B.tech degree.
           <br/>
           <br/> */}
-            Here's a list of works showcasing my skills.
+            Here&apos;s a list of works showcasing my skills.
           </Paragraph>
 
           <Box align="center" my={4}>
