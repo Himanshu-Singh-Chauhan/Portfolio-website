@@ -1,5 +1,6 @@
 import Logo from './logo'
 import NextLink from 'next/link'
+import { useState, useEffect } from 'react'
 
 import {
   Container,
@@ -17,7 +18,8 @@ import {
 } from '@chakra-ui/react'
 
 import { HamburgerIcon } from '@chakra-ui/icons'
-import ThemeToggleButton from './theme-toggle-button'
+// import ThemeToggleButton from './theme-toggle-button'
+import ThemeToggleButton from './daynight-theme-btn'
 import SvgUnderline from '../styles/svg_round_scribble_underline'
 
 
@@ -31,7 +33,8 @@ const LinkItem = ({ href, path, children }) => {
     <NextLink href={href}>
       <Link
         p={2}
-        bg={active ? 'glassTeal' : undefined}
+        bgColor={active ? 'teal.200' : undefined}
+        borderRadius= {10}
         color={active ? '#202023' : inactiveColor}
       >
         {children}
@@ -70,6 +73,12 @@ const LinkItemSvgHoverAnim = ({ href, path, children }) => {
 const Navbar = props => {
   const { path } = props
 
+  const [clientready, setClientReady] = useState(false);
+
+  useEffect(() => {
+    setClientReady(true)
+  }, [])
+
   return (
     <Box
       position="fixed"
@@ -102,12 +111,16 @@ const Navbar = props => {
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
         >
+          <LinkItem href="/" path={path}>
+            Home
+          </LinkItem>
+
           <LinkItem href="/works" path={path}>
             Works
           </LinkItem>
 
-          <LinkItem href="/about" path={path}>
-            About
+          <LinkItem href="/posts" path={path}>
+            Posts
           </LinkItem>
 
           <Box pb={3}>
@@ -119,7 +132,8 @@ const Navbar = props => {
         </Stack>
 
         <Box flex={1} align="right">
-          <ThemeToggleButton />
+          {/* <ThemeToggleButton /> */}
+          {clientready ? <ThemeToggleButton/> : null}
           <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
             <Menu>
               <MenuButton
@@ -137,7 +151,7 @@ const Navbar = props => {
                   <MenuItem as={Link}>Works</MenuItem>
                 </NextLink>
                 <NextLink href="/posts">
-                  <MenuItem as={Link}>About / Contact Me</MenuItem>
+                  <MenuItem as={Link}>Posts</MenuItem>
                 </NextLink>
 
                 <MenuItem

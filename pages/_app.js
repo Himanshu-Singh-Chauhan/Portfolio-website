@@ -7,6 +7,7 @@ import { AnimatePresence } from 'framer-motion'
 // My custom styles
 // for some reason we have to imprort css files in this file only.
 import '../styles/round_scribble_underline.scss'
+import '../styles/daynight_themebtn.scss' 
 
 const Website = ({ Component, pageProps, router }) => {
   return (

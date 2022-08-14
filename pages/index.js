@@ -21,7 +21,7 @@ const Page = () => {
           borderRadius="lg"
           bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
           p={6}
-          textColor="white"
+          textColor={useColorModeValue('blackAlpha.900', 'whiteAlpha.900')}
           textAlign="center"
         >
           Hello, I&apos;m final year CS student studying in Banglore!
@@ -42,7 +42,7 @@ const Page = () => {
 
         <Section delay={0.1}>
           <Heading as="h3" variant="section-title">
-            Works
+            About
           </Heading>
           <Paragraph>
             {/* I'm a computer science student passionate about programming and design. pursuing my B.tech degree.
