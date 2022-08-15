@@ -1,0 +1,68 @@
+/* I found this style on Bulma homepage
+Bulma homepage uses it (atleast on 25 april 2022) */
+
+.bd-focus-item {
+  color: #000;
+  position: relative;
+}
+
+
+.bd-focus-item::before {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #fafafa;
+  border-radius: 6px;
+  content: "";
+  display: block;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(1.1);
+  transform-origin: center;
+  transition-duration: 172ms;
+  transition-property: opacity, transform;
+}
+
+
+.bd-focus-item:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+.bd-focus-item {
+  align-items: center;
+  border-radius: 6px;
+  display: flex;
+  padding: 1.5rem;
+  position: relative;
+}
+
+.bd-focus-item .subtitle,
+.bd-focus-item .title a {
+  transition-duration: 172ms;
+  transition-property: color;
+}
+.bd-focus-item .title {
+  position: relative;
+  transition-duration: 172ms;
+  transition-property: color;
+}
+.bd-focus-item .subtitle {
+  color: #7a7a7a;
+  position: relative;
+}
+
+.bd-focus-item .subtitle .subtitle {
+  color: #4a4a4a;
+}
+.bd-focus-item:hover .title {
+  color: #48c78e;
+}
+
+
+/* .bd-focus-item:nth-child(1):hover .title {
+  color: #ff470f;
+} */

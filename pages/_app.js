@@ -8,6 +8,7 @@ import { AnimatePresence } from 'framer-motion'
 // for some reason we have to imprort css files in this file only.
 import '../styles/round_scribble_underline.scss'
 import '../styles/daynight_themebtn.scss' 
+import '../styles/awesome_hover_button_fromBulmaWebsite.css' // use it for social media links
 
 const Website = ({ Component, pageProps, router }) => {
   return (
