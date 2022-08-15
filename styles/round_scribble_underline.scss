@@ -4,6 +4,8 @@
 :root {
     --text: #2B3044;
     --line: #B2F5EA;
+    // temporary fix, used same color for inactive and active.
+    --line-light: #38B2AC;
     --line-active: #38B2AC;
 }
 
@@ -24,7 +26,7 @@
         bottom: 0;
         transform: translate(-50%, 7px) translateZ(0);
         fill: none;
-        stroke: var(--stroke, var(--line));
+        stroke: var(--stroke, var(--line-light));
         stroke-linecap: round;
         stroke-width: 2px;
         stroke-dasharray: var(--offset, 69px) 278px;
