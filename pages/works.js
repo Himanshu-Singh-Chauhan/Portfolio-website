@@ -25,6 +25,9 @@ const Works = () => {
               id="url_shortner"
               title="URL Shortner"
               thumbnail={urlshortner}
+              live = 'https://shortner-url.herokuapp.com/'
+              livetext='Live'
+              github="https://github.com/Himanshu-Singh-Chauhan/"
             >
               A URL shortener service creates a short url/aliases/tiny url
 against a long url. The tiny url, then redirects to the original url.
@@ -52,7 +55,7 @@ against a long url. The tiny url, then redirects to the original url.
         {/* <Section>
           <Divider my={6} />
           <Heading as="h3" fontSize={20}>
-            Other heading style
+            Old Works
           </Heading>
         </Section>
 

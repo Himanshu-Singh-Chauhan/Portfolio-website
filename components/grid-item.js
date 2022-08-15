@@ -1,6 +1,6 @@
 import NextLink from 'next/link'
 import Image from 'next/image'
-import { Box, Text, LinkBox, LinkOverlay } from '@chakra-ui/react'
+import { Box, Text, Link, LinkBox, LinkOverlay } from '@chakra-ui/react'
 import { Global } from '@emotion/react'
 
 export const GridItem = ({ children, href, thumbnail, title }) => {
@@ -24,26 +24,46 @@ export const GridItem = ({ children, href, thumbnail, title }) => {
   )
 }
 
-export const WorkGridItem = ({ children, id, title, thumbnail }) => {
+export const WorkGridItem = ({
+  children,
+  id,
+  title,
+  thumbnail,
+  live,
+  livetext,
+  github
+}) => {
   return (
     <Box w="100%" align="center">
-      <NextLink href={`/works/${id}`}>
-        <LinkBox cursor="pointer">
-          <Image
-            src={thumbnail}
-            alt={title}
-            className="grid-item-thumbnail"
-            placeholder="blur"
-          ></Image>
+      {/* <NextLink href={live ? live : '/not-found'}> */}
+      <LinkBox cursor="pointer">
+        <Image
+          src={thumbnail}
+          alt={title}
+          className="grid-item-thumbnail"
+          placeholder="blur"
+        ></Image>
 
-          <LinkOverlay href={`/works/${id}`}>
-            <Text mt={2} fontSize={20}>
-              {title}
-            </Text>
-          </LinkOverlay>
-          <Text fontSize={14}>{children}</Text>
-        </LinkBox>
-      </NextLink>
+        <LinkOverlay href={live} target="_blank"></LinkOverlay>
+
+        <Text mt={2} fontSize={20}>
+          {title}
+          {live ? <Text display="inline"> - &nbsp;</Text> : null}
+          {live ? (
+            <NextLink href={live} passHref={true}>
+              <Link target="_blank">{livetext}</Link>
+            </NextLink>
+          ) : null}
+          {github ? <Text display="inline">&nbsp; - &nbsp;</Text> : null}
+          {github ? (
+            <NextLink href={github} passHref={true}>
+              <Link target="_blank">Github</Link>
+            </NextLink>
+          ) : null}
+        </Text>
+        <Text fontSize={14}>{children}</Text>
+      </LinkBox>
+      {/* </NextLink> */}
     </Box>
   )
 }
