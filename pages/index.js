@@ -24,7 +24,7 @@ const Page = () => {
           textColor={useColorModeValue('blackAlpha.900', 'whiteAlpha.900')}
           textAlign="center"
         >
-          Hello, I&apos;m final year CS student studying in Banglore!
+          Add social media links here.
         </Box>
 
         <Box display={{ md: 'flex' }}>
@@ -34,6 +34,7 @@ const Page = () => {
               variant="page-title"
               paddingTop={3}
               color="teal.500"
+              letterSpacing={1}
             >
               Himanshu Chauhan
             </Heading>
@@ -48,7 +49,7 @@ const Page = () => {
             {/* I'm a computer science student passionate about programming and design. pursuing my B.tech degree.
           <br/>
           <br/> */}
-            Here&apos;s a list of works showcasing my skills.
+            Hello, I am Himansu, a guy who loves programming, designing, and 3D. Final year CS student studying in Banglore!
           </Paragraph>
 
           <Box align="center" my={4}>
@@ -62,15 +63,22 @@ const Page = () => {
 
         <Section delay={0.2}>
           <Heading as="h3" variant="section-title">
-            Bio
+            Education
           </Heading>
           <BioSection>
-            <BioYear>2001</BioYear>
-            Born
+            <BioYear>2019 - 2023</BioYear>
+            B.Tech (CSE) - Ramaiah University - <BioYear>8.05 CGPA</BioYear>
+
+          </BioSection>
+          <BioSection>
+            <BioYear>2018</BioYear> 12th Standard - 76% (CBSE)
+          </BioSection>
+          <BioSection>
+            <BioYear>2016</BioYear> 10th Standard - 8.6 CGPA (CBSE)
           </BioSection>
         </Section>
       </Container>
-      Add social media links here.
+      
     </Layout>
   )
 }

@@ -12,7 +12,7 @@ import '../styles/daynight_themebtn.scss'
 const Website = ({ Component, pageProps, router }) => {
   return (
     <ChakraProvider theme={theme}>
-      <Fonts />
+      {/* <Fonts /> */}
       <Layout router={router}>
         <AnimatePresence exitBeforeEnter initial={true}>
         <Component {...pageProps} key={router.route} />

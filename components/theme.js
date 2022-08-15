@@ -15,11 +15,13 @@ const components = {
       'section-title': {
         textDecoration: 'underline',
         fontSize: 20,
+        fontWeight: 20,
         textUnderlineOffset: 6,
         textDecorationColor: '#525252',
-        textDecorationThickness: 4,
+        textDecorationThickness: 2,
         marginTop: 3,
-        marginBottom: 4
+        marginBottom: 4,
+        letterSpacing: 1
       }
     }
   },
@@ -32,7 +34,8 @@ const components = {
 }
 
 const fonts = {
-  heading: "M PLUS Rounded 1c"
+  // heading: "M PLUS Rounded 1c"
+  heading: "Gilroy"
 }
 
 const colors = {
