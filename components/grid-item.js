@@ -31,8 +31,16 @@ export const WorkGridItem = ({
   thumbnail,
   live,
   livetext,
-  github
+  github,
+  openInSameTab
 }) => {
+
+  let newTab = '_blank'; // by default, open in new tab.
+
+  if (openInSameTab === true) {
+    newTab = ''
+  }
+
   return (
     <Box w="100%" align="center">
       {/* <NextLink href={live ? live : '/not-found'}> */}
@@ -44,20 +52,20 @@ export const WorkGridItem = ({
           placeholder="blur"
         ></Image>
 
-        <LinkOverlay href={live} target="_blank"></LinkOverlay>
+        <LinkOverlay href={live} target={newTab}></LinkOverlay>
 
         <Text mt={2} fontSize={20}>
           {title}
           {live ? <Text display="inline"> - &nbsp;</Text> : null}
           {live ? (
             <NextLink href={live} passHref={true}>
-              <Link target="_blank">{livetext}</Link>
+              <Link target={newTab}>{livetext}</Link>
             </NextLink>
           ) : null}
           {github ? <Text display="inline">&nbsp; - &nbsp;</Text> : null}
           {github ? (
             <NextLink href={github} passHref={true}>
-              <Link target="_blank">Github</Link>
+              <Link target={newTab}>Github</Link>
             </NextLink>
           ) : null}
         </Text>
