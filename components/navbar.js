@@ -47,20 +47,19 @@ const LinkItem = ({ href, path, children }) => {
 
 
 const LinkItemSvgHoverAnim = ({ href, path, children }) => {
-  const active = path === href
-  const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900')
-
   return (
-    <NextLink href={href}>
+    <NextLink href={href} passHref={true}>
       <Link
         p={3}
         pb={0}
-        bg={active ? 'glassTeal' : undefined}
-        color={active ? '#202023' : inactiveColor}
+        // bg={active ? 'glassTeal' : undefined}
+        color={useColorModeValue('gray200', 'whiteAlpha.900')}
         className="round_scribble_underline"
         style={{ textDecoration: 'none' }}
+        target="_blank"
       >
         {children}
+        <SvgUnderline />
       </Link>
     </NextLink>
   )
@@ -124,9 +123,8 @@ const Navbar = props => {
           </LinkItem>
 
           <Box pb={3}>
-            <LinkItemSvgHoverAnim href="/about" path={path}>
+            <LinkItemSvgHoverAnim href="https://github.com/Himanshu-Singh-Chauhan/Portfolio-website">
               Source
-              <SvgUnderline />
             </LinkItemSvgHoverAnim>
           </Box>
         </Stack>
@@ -156,7 +154,7 @@ const Navbar = props => {
 
                 <MenuItem
                   as={Link}
-                  href="https://www.github.com/himanshu-singh-chauhan"
+                  href="https://github.com/Himanshu-Singh-Chauhan/Portfolio-website"
                 >
                   View Source
                 </MenuItem>
