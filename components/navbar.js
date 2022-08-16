@@ -118,8 +118,12 @@ const Navbar = props => {
             Works
           </LinkItem>
 
-          <LinkItem href="/posts" path={path}>
+          {/* <LinkItem href="/posts" path={path}>
             Posts
+          </LinkItem> */}
+
+          <LinkItem href="/contact" path={path}>
+            Contact Me.
           </LinkItem>
 
           <Box pb={3}>
