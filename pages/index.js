@@ -30,7 +30,7 @@ const Page = () => {
           textAlign="center"
         >
           {/* I don't know what to add here, but want to keep the box. */}
-          <NextLink href='https://drive.google.com/u/1/uc?id=17QgWd1tqJO_kXY2gq_2lED9xFw2VJgff&export=download'>
+          <NextLink href='https://drive.google.com/file/d/1y93b1pdGKlcA4sLRjuNG7e6qez_o8Ywe/view?usp=sharing'>
             <Button rightIcon={<DownloadIcon />} colorScheme="teal">
               Download Resume
             </Button>
