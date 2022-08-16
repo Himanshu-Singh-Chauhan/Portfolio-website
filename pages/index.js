@@ -1,17 +1,22 @@
 import NextLink from 'next/link'
+import Image from 'next/image'
 import {
   Container,
   Box,
   Heading,
   useColorModeValue,
   Link,
-  Button
+  Button,
+  HStack,
+  Center,
+  LinkBox
 } from '@chakra-ui/react'
-import { ChevronRightIcon } from '@chakra-ui/icons'
+import { ChevronRightIcon, DownloadIcon } from '@chakra-ui/icons'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import Paragraph from '../components/paragraph'
 import { BioSection, BioYear } from '../components/bio'
+import SocialButton from '../components/socialButton'
 
 const Page = () => {
   return (
@@ -24,7 +29,12 @@ const Page = () => {
           textColor={useColorModeValue('blackAlpha.900', 'whiteAlpha.900')}
           textAlign="center"
         >
-          Add social media links here.
+          {/* I don't know what to add here, but want to keep the box. */}
+          <NextLink href='https://drive.google.com/u/1/uc?id=17QgWd1tqJO_kXY2gq_2lED9xFw2VJgff&export=download'>
+            <Button rightIcon={<DownloadIcon />} colorScheme="teal">
+              Download Resume
+            </Button>
+          </NextLink>
         </Box>
 
         <Box display={{ md: 'flex' }}>
@@ -49,7 +59,8 @@ const Page = () => {
             {/* I'm a computer science student passionate about programming and design. pursuing my B.tech degree.
           <br/>
           <br/> */}
-            Hello, I am Himansu, a guy who loves programming, designing, and 3D. Final year CS student studying in Banglore!
+            Hello, I am Himansu, a guy who loves programming, designing, and 3D.
+            Final year CS student studying in Banglore!
           </Paragraph>
 
           <Box align="center" my={4}>
@@ -68,7 +79,6 @@ const Page = () => {
           <BioSection>
             <BioYear>2019 - 2023</BioYear>
             B.Tech (CSE) - Ramaiah University - <BioYear>8.05 CGPA</BioYear>
-
           </BioSection>
           <BioSection>
             <BioYear>2018</BioYear> 12th Standard - 76% (CBSE)
@@ -78,7 +88,6 @@ const Page = () => {
           </BioSection>
         </Section>
       </Container>
-      
     </Layout>
   )
 }
